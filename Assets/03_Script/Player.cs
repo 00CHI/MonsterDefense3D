@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //Vector
     Vector3 originalPosition;
     Vector3 direct;
+    
+    //Quaternion
     Quaternion lookTarget;
 
+    //Components
+    Animator anim;
+
+    //bool
     bool move = false;
 
+    //float
+    float moveSpeed = 3f;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -41,11 +51,22 @@ public class Player : MonoBehaviour
     {
         if(move)
         {
-            transform.position += direct.normalized * Time.deltaTime * 2f;
+            transform.position += direct.normalized * Time.deltaTime * moveSpeed;
             transform.rotation = Quaternion.Lerp(transform.rotation, lookTarget, 0.25f);
 
             //캐릭터의 위치와 목표 위치의 거리가 0.05f 보다 큰 동안 이동
             move = (transform.position - originalPosition).magnitude > 0.05f;
+
+            if((transform.position - originalPosition).magnitude <= 0.05f)
+            {
+                move = false;
+            }
+            anim.SetBool("isRun", true);
         }
+        else
+        {
+            anim.SetBool("isRun", false);
+        }
+
     }
 }
