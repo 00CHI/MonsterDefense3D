@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Number_UI02
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 6658591680104984bbdd14cb04bad616, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 113f323030e8588469b5647efd6832a4: 21300000
+    - e0b0fc91d6be40e46adcfc1d59cc4470: 21300000
+    - 471a1df2f2c35ab48802e96f7e6a4668: 21300000
+    - be6271f37684fc242908d1f437c0fa67: 21300000
+    - 05a6bd0473288eb47b41f073f91a3ecd: 21300000
+    - 4b612ee4a32fd614dbdf066542b18ca6: 21300000
+    - 3d5125a7f63aae04394e2b549b163a43: 21300000
+    - cdb16f08bed4f8c45b9a3e969801f743: 21300000
+    - 0945b85868974b34d8be09614ce888e1: 21300000
+    - 300d9a9bb53aa1245a50f308e6e84b31: 21300000
+    - 8e4c08ece8d335d49b3c9ca93b4fce0f: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 113f323030e8588469b5647efd6832a4, type: 3}
+  - {fileID: 21300000, guid: e0b0fc91d6be40e46adcfc1d59cc4470, type: 3}
+  - {fileID: 21300000, guid: 471a1df2f2c35ab48802e96f7e6a4668, type: 3}
+  - {fileID: 21300000, guid: be6271f37684fc242908d1f437c0fa67, type: 3}
+  - {fileID: 21300000, guid: 05a6bd0473288eb47b41f073f91a3ecd, type: 3}
+  - {fileID: 21300000, guid: 4b612ee4a32fd614dbdf066542b18ca6, type: 3}
+  - {fileID: 21300000, guid: 3d5125a7f63aae04394e2b549b163a43, type: 3}
+  - {fileID: 21300000, guid: cdb16f08bed4f8c45b9a3e969801f743, type: 3}
+  - {fileID: 21300000, guid: 0945b85868974b34d8be09614ce888e1, type: 3}
+  - {fileID: 21300000, guid: 300d9a9bb53aa1245a50f308e6e84b31, type: 3}
+  - {fileID: 21300000, guid: 8e4c08ece8d335d49b3c9ca93b4fce0f, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 1
+  - 2
+  - "\u2014Pngtree\u2014cute number colorfull_7021489"
+  - 5
+  - 3
+  - 4
+  - 9
+  - 7
+  - 8
+  - 0
+  - 6
+  m_RenderDataMap: {}
+  m_Tag: Number_UI02
+  m_IsVariant: 0
