@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Number_UI01
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: fba6e15e7b0aa884a8e36cc56dd0bcb4, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 2e84a7001c0a6554d9b835e0502f0dd5: 21300000
+    - aafaa211fae646e4cb7fad81572bbc5d: 21300000
+    - c61de5e30e4e73d498425da621742666: 21300000
+    - 2b338ac4da30c074887aa34892425346: 21300000
+    - acbc3395dfac6ad4d8b9367689453f88: 21300000
+    - 422368d9f4f158a48a652efc842a4136: 21300000
+    - 9329bc5bd308f8d40be3c2d564b32a19: 21300000
+    - ab26110c8c9823a498da2fa0ada188fd: 21300000
+    - b896cf4cc52686f46b09132b1cb6c351: 21300000
+    - 07b4a1bf06e603f46aa0a0ca2b114594: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 2e84a7001c0a6554d9b835e0502f0dd5, type: 3}
+  - {fileID: 21300000, guid: aafaa211fae646e4cb7fad81572bbc5d, type: 3}
+  - {fileID: 21300000, guid: c61de5e30e4e73d498425da621742666, type: 3}
+  - {fileID: 21300000, guid: 2b338ac4da30c074887aa34892425346, type: 3}
+  - {fileID: 21300000, guid: acbc3395dfac6ad4d8b9367689453f88, type: 3}
+  - {fileID: 21300000, guid: 422368d9f4f158a48a652efc842a4136, type: 3}
+  - {fileID: 21300000, guid: 9329bc5bd308f8d40be3c2d564b32a19, type: 3}
+  - {fileID: 21300000, guid: ab26110c8c9823a498da2fa0ada188fd, type: 3}
+  - {fileID: 21300000, guid: b896cf4cc52686f46b09132b1cb6c351, type: 3}
+  - {fileID: 21300000, guid: 07b4a1bf06e603f46aa0a0ca2b114594, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 2
+  - 9
+  - 5
+  - 4
+  - 8
+  - 3
+  - 0
+  - 1
+  - 6
+  - 7
+  m_RenderDataMap: {}
+  m_Tag: Number_UI01
+  m_IsVariant: 0

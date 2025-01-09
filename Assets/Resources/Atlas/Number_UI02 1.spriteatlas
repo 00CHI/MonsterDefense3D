@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Number_UI02
+  m_Name: Number_UI02 1
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -74,5 +74,5 @@ SpriteAtlas:
   - 0
   - 6
   m_RenderDataMap: {}
-  m_Tag: Number_UI02
+  m_Tag: Number_UI02 1
   m_IsVariant: 0
