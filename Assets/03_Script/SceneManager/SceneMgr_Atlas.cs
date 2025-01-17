@@ -8,7 +8,7 @@ using UnityEngine.U2D;
 public partial class SceneMgr : MonoBehaviour
 {
 
-    [NonReorderable]
+    [NonReorderable]//알고리즘에서 딕셔너리의 순서를 바꿀 수도 있기 때문에 바꾸지 않도록 함.// 딕셔너리의 순서는 계속 바뀜.
     Dictionary<string,SpriteAtlas> DicSpriteAtlas = new Dictionary<string, SpriteAtlas> ();
 
     public Image atlas;
