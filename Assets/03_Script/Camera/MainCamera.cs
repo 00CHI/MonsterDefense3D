@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
-    public GameObject Target;
+    GameObject Target;
 
     public float offsetX = 0f;
     public float offsetY = 5f;
@@ -17,16 +17,19 @@ public class MainCamera : MonoBehaviour
     public float CameraSpeed = 10f;
 
     Vector3 TargetPos;
-
+     void Awake()
+    {
+        //Target
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
-        TargetPos = new Vector3 (
-            Target.transform.position.x + offsetX,
-            Target.transform.position.y + offsetY,
-            Target.transform.position.z + offsetZ
-            );
+        //TargetPos = new Vector3 (
+        //    Target.transform.position.x + offsetX,
+        //    Target.transform.position.y + offsetY,
+        //    Target.transform.position.z + offsetZ
+        //    );
 
-        transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime * CameraSpeed);
+        //transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime * CameraSpeed);
     }
 }

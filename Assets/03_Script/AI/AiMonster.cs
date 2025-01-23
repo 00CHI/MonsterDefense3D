@@ -24,6 +24,10 @@ public class AiMonster : AiBase
 
     protected override void Move()
     {
+        Vector3 targetPos = Shared.Stage.TRPATH[TargetIndex].position;
+
+        Character.Move(targetPos);
+
         base.Move();
     }
 }

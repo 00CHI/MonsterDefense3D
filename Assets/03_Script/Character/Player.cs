@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public partial class Player : Character
 {
     //Vector
     Vector3 originalPosition;
@@ -68,5 +68,24 @@ public class Player : MonoBehaviour
             anim.SetBool("isRun", false);
         }
 
+    }
+    public override void CharacterType()
+    {
+        Type = eCHARACTER.eCHARACTER_PLAYER;
+    }
+
+    public override void Init()
+    {
+        base.Init();
+    }
+
+    public override void InitStat()
+    {
+        Stat[(int)eSTAT.eSTAT_HP] = 500;
+        Stat[(int)eSTAT.eSTAT_MP] = 100;
+        Stat[(int)eSTAT.eSTAT_ATK] = 25;
+        Stat[(int)eSTAT.eSTAT_DEF] = 20;
+        Stat[(int)eSTAT.eSTAT_SPEED] = 4;
+        Stat[(int)eSTAT.eSTAT_RES] = 5;
     }
 }
