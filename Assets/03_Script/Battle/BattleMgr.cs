@@ -36,14 +36,14 @@ public class BattleMgr : MonoBehaviour
         }
 
         //Player
-        GameObject pobj = GameObject.Instantiate(playerObj, Vector3.zero,
+        GameObject pObj = GameObject.Instantiate(playerObj, Vector3.zero,
             Quaternion.identity) as GameObject;// as :객체로 형변환 시켜주는 역할 ()는 강제 형변환 as는 형변환이 될 경우에만 바꾸도록해줌 
 
-        pobj.transform.SetParent(Shared.Stage.TRPLAYER);
-        pobj.transform.position = Shared.Stage.TRPLAYER.position;
-        pobj.transform.localScale = new Vector3(1, 1, 1);
+        pObj.transform.SetParent(Shared.Stage.TRPLAYER);
+        pObj.transform.position = Shared.Stage.TRPLAYER.position;
+        pObj.transform.localScale = new Vector3(1, 1, 1);
 
-        Character character = pobj.GetComponent<Character>();
+        Character character = pObj.GetComponent<Character>();
 
         //Monster
         GameObject mObj = GameObject.Instantiate(monsterObj, Vector3.zero,
