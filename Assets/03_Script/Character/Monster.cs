@@ -4,8 +4,17 @@ using UnityEngine;
 using static UnityEditor.Progress;
 
 public class Monster : Character
-{
+{  
 
+    private void Awake()
+    {
+        Shared.Monster = this;
+    }
+
+    private void Update()
+    {
+        //monsterPos = transform.position;
+    }
     public override void CharacterType()
     {
         Type = eCHARACTER.eCHARACTER_MONSTER;

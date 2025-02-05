@@ -13,7 +13,8 @@ public class Bullet : MonoBehaviour
 
     public virtual void Init()
     {
-        Speed = 0; 
+        Speed = 0;
+       
     }
 
     protected virtual void Move()

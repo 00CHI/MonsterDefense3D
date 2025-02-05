@@ -8,6 +8,8 @@ public class BulletMgr : MonoBehaviour
         new Dictionary<int, Bullet>();
     int Key;
 
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -18,7 +20,7 @@ public class BulletMgr : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.V))
         {
-            CreateBullet(Shared.Stage.TRPLAYER.position, Shared.Stage.TRMONSTER.position, 3f , "Arrow_01");
+            CreateBullet(Shared.Stage.TRPLAYER.position, Shared.Monster.transform.position, 3f , "Arrow_01");
         }
     }
 
@@ -32,28 +34,26 @@ public class BulletMgr : MonoBehaviour
             return;
         }
 
-        
-
         GameObject aObj = GameObject.Instantiate(arrowObj, Vector3.zero,
             Quaternion.identity) as GameObject;
 
-        Bullet bullet = aObj.GetComponent<Bullet>();
-        Bullet bulletArrow = aObj.GetComponent<BulletArrow>();
+        BulletArrow bullet = aObj.GetComponent<BulletArrow>();
 
         aObj.transform.SetParent(Shared.Stage.TRPLAYER);
-        aObj.transform.position = _Pos;
         aObj.transform.localScale = new Vector3(1, 1, 1);
 
-        if(bullet == null)
+        aObj.transform.position = _Pos;
+
+        if (bullet == null)
         {
             return;
         }
 
-        bullet.BulletArrow.Init(_TargetPos, _Speed);
+        bullet.Init(_TargetPos, _Speed);
 
         DicBulletMgr.Add(Key, bullet);
 
-        //Key++;
+        Key++;
 
         //레이어로 아군 적군 설정.
     }

@@ -12,6 +12,7 @@ public class BattleMgr : MonoBehaviour
     private void Awake()
     {
         Shared.BattleMgr = this;
+        
     }
 
     private void Start()
@@ -24,7 +25,7 @@ public class BattleMgr : MonoBehaviour
     {
         UnityEngine.Object playerObj = Resources.Load("04_Prefab/Character/"+"Player");
         UnityEngine.Object monsterObj = Resources.Load("04_Prefab/Character/" + "Monster");
-
+        //∏ÛΩ∫≈Õ 
 
         if (playerObj == null) 
         {
