@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BattleMgr : MonoBehaviour
 {
-    Dictionary<int, Character> DicCharacter =
+    public Dictionary<int, Character> DicCharacter =
         new Dictionary<int, Character>();
+
+    public Character Player;
 
     int Key;
 
@@ -24,14 +26,9 @@ public class BattleMgr : MonoBehaviour
     public void CreatePlayer()
     {
         UnityEngine.Object playerObj = Resources.Load("04_Prefab/Character/"+"Player");
-        UnityEngine.Object monsterObj = Resources.Load("04_Prefab/Character/" + "Monster");
         //몬스터 
 
         if (playerObj == null) 
-        {
-            return;
-        }
-        if (monsterObj == null)
         {
             return;
         }
@@ -41,10 +38,31 @@ public class BattleMgr : MonoBehaviour
             Quaternion.identity) as GameObject;// as :객체로 형변환 시켜주는 역할 ()는 강제 형변환 as는 형변환이 될 경우에만 바꾸도록해줌 
 
         pObj.transform.SetParent(Shared.Stage.TRPLAYER);
-        pObj.transform.position = Shared.Stage.TRPLAYER.position;
         pObj.transform.localScale = new Vector3(1, 1, 1);
+        pObj.transform.position = Shared.Stage.TRPLAYER.position;
 
-        Character character = pObj.GetComponent<Character>();
+        Player = pObj.AddComponent<Player>();
+
+        if (Player == null)
+        {
+            return;
+        }
+
+        Player.Init();
+
+        //DicCharacter.Add(Key, Player);
+
+        Key++;
+    }
+
+    public void CreateMonster()
+    {
+        UnityEngine.Object monsterObj = Resources.Load("04_Prefab/Character/" + "Monster");
+
+        if (monsterObj == null)
+        {
+            return;
+        }
 
         //Monster
         GameObject mObj = GameObject.Instantiate(monsterObj, Vector3.zero,
@@ -53,21 +71,6 @@ public class BattleMgr : MonoBehaviour
         mObj.transform.SetParent(Shared.Stage.TRMONSTER);
         mObj.transform.position = Shared.Stage.TRMONSTER.position;
         mObj.transform.localScale = new Vector3(1, 1, 1);
-
-        if (character == null)
-        {
-            return;
-        }
-
-        character.Init();
-
-        DicCharacter.Add(Key, character);
-
-        Key++;
-    }
-
-    public void CreateMonster()
-    {
 
     }
 

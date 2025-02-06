@@ -8,6 +8,7 @@ public class BulletMgr : MonoBehaviour
         new Dictionary<int, Bullet>();
     int Key;
 
+    
 
 
     // Start is called before the first frame update
@@ -20,7 +21,7 @@ public class BulletMgr : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.V))
         {
-            CreateBullet(Shared.Stage.TRPLAYER.position, Shared.Monster.transform.position, 3f , "Arrow_01");
+            CreateBullet(Shared.BattleMgr.Player.transform.position, Shared.Monster.transform.position, 3f , "Arrow_01");
         }
     }
 
@@ -39,7 +40,7 @@ public class BulletMgr : MonoBehaviour
 
         BulletArrow bullet = aObj.GetComponent<BulletArrow>();
 
-        aObj.transform.SetParent(Shared.Stage.TRPLAYER);
+        //aObj.transform.SetParent();
         aObj.transform.localScale = new Vector3(1, 1, 1);
 
         aObj.transform.position = _Pos;

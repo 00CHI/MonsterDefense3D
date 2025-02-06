@@ -6,10 +6,6 @@ using UnityEngine.UIElements;
 
 public class BulletArrow : Bullet
 {
-    //protected Vector3 TargetPos;
-
-    public Quaternion lookTarget;
-
     private void Awake()
     {
         Shared.BulletArrow = this;
@@ -18,6 +14,18 @@ public class BulletArrow : Bullet
     {
         TargetPos = _TargetPos;
         Speed = _Speed;
+
+        Vector3 dir = TargetPos = transform.position;
+
+        Quaternion rotation = Quaternion.LookRotation(dir.normalized);
+
+        float r = Mathf.Atan2(dir.x, dir.y);
+
+        float d = r * Mathf.Rad2Deg;
+
+        if (d < 0)
+            d += 360;
+        transform.rotation = Quaternion.Euler(rotation.x, rotation.y, -d);
     }
 
     protected override void Move()
@@ -27,19 +35,29 @@ public class BulletArrow : Bullet
         //Vector3.Nomalize();//정규화
         //Vector3.Magnitude();//길이
 
-        Vector3 dir = TargetPos - transform.position;
+        Vector3 dir = Shared.Monster.transform.position - transform.position;
 
-        dir.y = 0f;
+        //float angle = Vector3.Dot(TargetPos, transform.position);
 
-        lookTarget = Quaternion.LookRotation(TargetPos.normalized);
+        //dir.x = 90;
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, lookTarget, Time.deltaTime);
+        //Quaternion lookTarget =  Quaternion.LookRotation(TargetPos.normalized);
 
+        //transform.rotation = Quaternion.Euler(angle, 0, 0);
+        //float radian = Mathf.Atan2(dir.x, dir.y);
+
+        //float degrees = radian * Mathf.Rad2Deg;
+
+      
+        //transform.rotation = Quaternion.Euler(0, 0, degrees);
         transform.position += dir * Speed * Time.deltaTime;
+
         //곡선 
         //transform.position = Vector3.Lerp(transform.position, TargetPos, Speed * Time.deltaTime);
-        
+
         //선형
         //transform.position = Vector3.Lerp(TargetPos, transform.position, Speed * Time.deltaTime);
+
+
     }
 }

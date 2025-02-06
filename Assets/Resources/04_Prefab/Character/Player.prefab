@@ -512,10 +512,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1383242020895172968}
+  - component: {fileID: 1956764771995469143}
   - component: {fileID: 623014810004489653}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -529,7 +530,7 @@ Transform:
   m_GameObject: {fileID: 2239236026266500431}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.64, y: 0.0050735474, z: -19.46328}
+  m_LocalPosition: {x: -0.64, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -540,6 +541,23 @@ Transform:
   - {fileID: 7202089662551621482}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1956764771995469143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2239236026266500431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e069f1d03e6a48940ad6db0f198503b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AI: {fileID: 0}
+  ANIMATOR: {fileID: 0}
+  Type: 0
+  HpMax: 0
+  Stat: 000000000000000000000000000000000000000000000000
 --- !u!95 &623014810004489653
 Animator:
   serializedVersion: 5
