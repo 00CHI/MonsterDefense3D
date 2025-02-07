@@ -23,6 +23,8 @@ public partial class Player : Character
     // Start is called before the first frame update
     void Awake()
     {
+        Shared.Player = this;
+
         anim = GetComponent<Animator>();
     }
 

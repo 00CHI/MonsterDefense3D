@@ -10,22 +10,28 @@ public class BulletArrow : Bullet
     {
         Shared.BulletArrow = this;
     }
+
+
     public void Init(Vector3 _TargetPos, float _Speed)
     {
         TargetPos = _TargetPos;
         Speed = _Speed;
 
-        Vector3 dir = TargetPos = transform.position;
+        //Vector3 dir = TargetPos - transform.position;
 
-        Quaternion rotation = Quaternion.LookRotation(dir.normalized);
+        //float r = Mathf.Atan2(dir.x, dir.y);
 
-        float r = Mathf.Atan2(dir.x, dir.y);
+        //float d = r * Mathf.Rad2Deg;
 
-        float d = r * Mathf.Rad2Deg;
+        //if (d < 0)
+        //    d += 360;
 
-        if (d < 0)
-            d += 360;
-        transform.rotation = Quaternion.Euler(rotation.x, rotation.y, -d);
+        //dir.z = d;
+
+        //Quaternion rotation = Quaternion.LookRotation(dir.normalized);
+
+       
+        //transform.rotation = Quaternion.Euler(rotation.x, rotation.y , rotation.z);
     }
 
     protected override void Move()
@@ -57,7 +63,8 @@ public class BulletArrow : Bullet
 
         //¼±Çü
         //transform.position = Vector3.Lerp(TargetPos, transform.position, Speed * Time.deltaTime);
-
-
     }
+
+
+
 }

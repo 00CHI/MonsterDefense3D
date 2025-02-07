@@ -8,7 +8,7 @@ public class BulletMgr : MonoBehaviour
         new Dictionary<int, Bullet>();
     int Key;
 
-    
+    float FireSpeed = 3f;
 
 
     // Start is called before the first frame update
@@ -21,7 +21,8 @@ public class BulletMgr : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.V))
         {
-            CreateBullet(Shared.BattleMgr.Player.transform.position, Shared.Monster.transform.position, 3f , "Arrow_01");
+            CreateArrow("Arrow_02");
+            //CreateBullet(Shared.BattleMgr.Player.transform.position, Shared.Monster.transform.position, 3f , "Arrow_01");
         }
     }
 
@@ -30,7 +31,7 @@ public class BulletMgr : MonoBehaviour
 
         UnityEngine.Object arrowObj = Resources.Load("04_Prefab/Bullet/" + _Prefabs);
 
-        if(arrowObj == null)
+        if (arrowObj == null)
         {
             return;
         }
@@ -41,7 +42,6 @@ public class BulletMgr : MonoBehaviour
         BulletArrow bullet = aObj.GetComponent<BulletArrow>();
 
         //aObj.transform.SetParent();
-        aObj.transform.localScale = new Vector3(1, 1, 1);
 
         aObj.transform.position = _Pos;
 
@@ -59,6 +59,27 @@ public class BulletMgr : MonoBehaviour
         //레이어로 아군 적군 설정.
     }
 
+    void CreateArrow(string _Prefabs)
+    {
+        UnityEngine.Object arrowObj = Resources.Load("04_Prefab/Bullet/" + _Prefabs);
 
+        GameObject aObj = GameObject.Instantiate(arrowObj, Vector3.zero,
+        Quaternion.identity) as GameObject;
+
+        if (arrowObj == null)
+        {
+            return;
+        }
+
+        aObj.transform.localScale = new Vector3(1, 1, 1);
+
+        Quaternion playerRotation = Shared.Player.transform.rotation;
+        Vector3 playerPosition = Shared.Player.transform.position;
+
+        Quaternion playerRotationZ = Quaternion.LookRotation(Shared.Player.transform.position);
+
+        aObj.transform.rotation = Quaternion.Euler(playerRotation.x + 90, playerRotation.y, playerRotation.z);
+        aObj.transform.position = new Vector3(playerPosition.x, playerPosition.y + 0.5f, playerPosition.z);
+    }
 
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public BulletArrow BulletArrow;
+    //public BulletArrow BulletArrow;
 
     protected Vector3 TargetPos;
 
