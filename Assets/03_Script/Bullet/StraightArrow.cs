@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class StraightArrow : Bullet
 {
-    Rigidbody rigidbody;
-
+    bool isMonster = false;
 
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody>();
+    }
+    public void Init(float _Speed)
+    {
+        Speed = _Speed;
     }
     // Update is called once per frame
     protected override void Move()
     {
-        rigidbody.AddForce(transform.up * Speed, ForceMode.Impulse);
+        transform.position += transform.forward * Speed * Time.deltaTime;
     }
+
+    
+
 }

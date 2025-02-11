@@ -41,21 +41,10 @@ public class BulletArrow : Bullet
         //Vector3.Nomalize();//정규화
         //Vector3.Magnitude();//길이
 
+        transform.LookAt(Shared.Monster.transform.position);
+
         Vector3 dir = Shared.Monster.transform.position - transform.position;
 
-        //float angle = Vector3.Dot(TargetPos, transform.position);
-
-        //dir.x = 90;
-
-        //Quaternion lookTarget =  Quaternion.LookRotation(TargetPos.normalized);
-
-        //transform.rotation = Quaternion.Euler(angle, 0, 0);
-        //float radian = Mathf.Atan2(dir.x, dir.y);
-
-        //float degrees = radian * Mathf.Rad2Deg;
-
-      
-        //transform.rotation = Quaternion.Euler(0, 0, degrees);
         transform.position += dir * Speed * Time.deltaTime;
 
         //곡선 
@@ -65,6 +54,22 @@ public class BulletArrow : Bullet
         //transform.position = Vector3.Lerp(TargetPos, transform.position, Speed * Time.deltaTime);
     }
 
+    protected override void Attack()
+    {
+        base.Attack();
+
+        Collider monsterCollider = Shared.Monster.GetComponent<Collider>();
+
+        if(monsterCollider)
+        {
+            Shared.Monster.Stat[(int)eSTAT.eSTAT_HP] -= Shared.Player.Stat[(int)eSTAT.eSTAT_ATK];
+        }
+        else if (!monsterCollider)
+        {
+            gameObject.SetActive(false);
+        }
+
+    }
 
 
 }

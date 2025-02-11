@@ -1038,6 +1038,7 @@ MonoBehaviour:
   offsetX: 0
   offsetY: 0
   offsetZ: 0
+  cameraSpeed: 5
 --- !u!1001 &122206172
 PrefabInstance:
   m_ObjectHideFlags: 0
