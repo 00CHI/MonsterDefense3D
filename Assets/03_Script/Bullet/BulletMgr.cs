@@ -31,15 +31,17 @@ public class BulletMgr : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.V))
         {
-            CreateBullet(Shared.BattleMgr.Player.transform.position, Shared.Monster.transform.position, 3f, "Arrow_01");
+            CreateBullet(Shared.Player, Shared.Monster, 3f, "Arrow_01");
         }
+
         if (Input.GetKeyDown(KeyCode.B))
         {
             CreateArrow(5f, "Arrow_02");
         }
+
     }
 
-    public void CreateBullet(Vector3 _Pos, Vector3 _TargetPos, float _Speed, string _Prefabs)
+    public void CreateBullet(Player _Player, Monster _Monster, float _Speed, string _Prefabs)
     {
 
             UnityEngine.Object arrowObj = Resources.Load("04_Prefab/Bullet/" + _Prefabs);
@@ -54,14 +56,14 @@ public class BulletMgr : MonoBehaviour
 
             BulletArrow bullet = aObj.GetComponent<BulletArrow>();
 
-            aObj.transform.position = _Pos;
+            aObj.transform.position = _Player.transform.position;
 
             if (bullet == null)
             {
                 return;
             }
 
-            bullet.Init(_TargetPos, _Speed);
+            bullet.Init(_Monster.transform.position, _Speed);
 
             DicBulletMgr.Add(Key, bullet);
 
@@ -93,9 +95,7 @@ public class BulletMgr : MonoBehaviour
 
         StraightArrow bullet = aObj.GetComponent<StraightArrow>();
 
-        bullet.Init( _Speed);
-
-        //aObj.transform.position = new Vector3(playerPosition.x, playerPosition.y, playerPosition.z);
+        bullet.Init(_Speed);
     }
 
 }

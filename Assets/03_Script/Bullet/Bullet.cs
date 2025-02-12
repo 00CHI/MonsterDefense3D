@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -12,6 +13,11 @@ public class Bullet : MonoBehaviour
     protected float Speed;
     protected float Damage;
 
+
+    private void Awake()
+    {
+
+    }
     public virtual void Init()
     {
         Speed = 0;
@@ -22,20 +28,11 @@ public class Bullet : MonoBehaviour
     {
 
     }
-    protected virtual void Attack()
-    {
-
-    }
 
 
     protected virtual void FixedUpdate()
     {
         Move();
-    }
-
-    protected void OnCollisionEnter(Collision collision)
-    {
-        
     }
 
 }

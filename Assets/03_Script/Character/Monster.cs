@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using static UnityEditor.Progress;
 
@@ -36,4 +37,11 @@ public class Monster : Character
     //{
     //    Item = _Item;
     //}
+
+    public void GetDamage()
+    {
+        Stat[(int)eSTAT.eSTAT_HP] -= Shared.Player.Stat[(int)eSTAT.eSTAT_ATK];
+
+        Debug.Log(Stat[(int)eSTAT.eSTAT_HP]);
+    }
 }

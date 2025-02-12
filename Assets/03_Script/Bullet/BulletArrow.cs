@@ -54,22 +54,7 @@ public class BulletArrow : Bullet
         //transform.position = Vector3.Lerp(TargetPos, transform.position, Speed * Time.deltaTime);
     }
 
-    protected override void Attack()
-    {
-        base.Attack();
 
-        Collider monsterCollider = Shared.Monster.GetComponent<Collider>();
-
-        if(monsterCollider)
-        {
-            Shared.Monster.Stat[(int)eSTAT.eSTAT_HP] -= Shared.Player.Stat[(int)eSTAT.eSTAT_ATK];
-        }
-        else if (!monsterCollider)
-        {
-            gameObject.SetActive(false);
-        }
-
-    }
 
 
 }
