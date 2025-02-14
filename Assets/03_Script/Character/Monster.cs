@@ -23,7 +23,7 @@ public class Monster : Character
     public override void InitStat()
     {
 
-        Stat[(int)eSTAT.eSTAT_HP] = 100;
+        Stat[(int)eSTAT.eSTAT_HP] = 200;
         Stat[(int)eSTAT.eSTAT_MP] = 10;
         Stat[(int)eSTAT.eSTAT_ATK] = 10;
         Stat[(int)eSTAT.eSTAT_DEF] = 5;
@@ -38,10 +38,4 @@ public class Monster : Character
     //    Item = _Item;
     //}
 
-    public void GetDamage()
-    {
-        Stat[(int)eSTAT.eSTAT_HP] -= Shared.Player.Stat[(int)eSTAT.eSTAT_ATK];
-
-        Debug.Log(Stat[(int)eSTAT.eSTAT_HP]);
-    }
 }

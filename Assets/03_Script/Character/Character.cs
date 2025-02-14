@@ -6,6 +6,8 @@ using UnityEngine;
 public abstract partial class Character : MonoBehaviour
 {
     public AiBase AI;
+    protected Monster MONSTER;
+    protected Monster PLAYER;
 
     public Animator ANIMATOR;
 

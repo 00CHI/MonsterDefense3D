@@ -5,6 +5,9 @@ using UnityEngine;
 public class StraightArrow : MonoBehaviour
 {
     float Speed;
+    int Damage;
+
+    
 
     private void Awake()
     {
@@ -14,25 +17,33 @@ public class StraightArrow : MonoBehaviour
     {
         Move();
     }
-    public void Init(float _Speed)
+    public void Init(float _Speed, int _Damage)
     {
         Speed = _Speed;
+        Damage = _Damage;
     }
+
     // Update is called once per frame
     public void Move()
     {
         transform.position += transform.forward * Speed * Time.deltaTime;
     }
-    public void OnCollisionEnter(Collision collision)
+
+    public void OnTriggerEnter(Collider other)
     {
-        Monster monster = collision.gameObject.GetComponent<Monster>();
+        Monster monster = other.transform.GetComponent<Monster>();
 
         if (monster == null)
         {
             return;
         }
-
-        
+        else if (monster)
+        {
+            Shared.Player.Attack(Shared.Monster);
+            
+            //Debug.Log("Monster");
+        }
     }
+
 
 }

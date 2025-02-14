@@ -46,6 +46,13 @@ public partial class Player : Character
                 move = true;
             }
         }
+        
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+             Shared.BulletMgr.CreateArrow(this, Stat[(int)eSTAT.eSTAT_ATK], 5f, "Arrow_02");
+        }
+
+        
 
         MoveOnClick();
     }
@@ -89,5 +96,14 @@ public partial class Player : Character
         Stat[(int)eSTAT.eSTAT_DEF] = 20;
         Stat[(int)eSTAT.eSTAT_SPEED] = 4;
         Stat[(int)eSTAT.eSTAT_RES] = 5;
+    }
+
+    public void Attack(Monster _Monster)
+    {
+        _Monster.InitStat();
+
+        _Monster.Stat[(int)eSTAT.eSTAT_HP] -= Stat[(int)eSTAT.eSTAT_ATK];
+
+        Debug.Log(_Monster.Stat[(int)eSTAT.eSTAT_HP]+ "몬스터 HP에" + Stat[(int)eSTAT.eSTAT_ATK] + "만큼 입혔습니다.");
     }
 }

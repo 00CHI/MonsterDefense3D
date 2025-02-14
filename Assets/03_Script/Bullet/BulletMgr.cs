@@ -9,7 +9,9 @@ public class BulletMgr : MonoBehaviour
 
     //Queue<int> QueueBulletMgr = new Queue<int>();
 
-    
+    List<GameObject> ListBulletMgr = new List<GameObject>();
+
+
     int Key;
 
     //몬스터 찾아오기
@@ -29,19 +31,19 @@ public class BulletMgr : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            CreateBullet(Shared.Player, Shared.Monster, 3f, "Arrow_01");
-        }
+        //if (Input.GetKeyDown(KeyCode.V))
+        //{
+        //    CreateBullet(Shared.Player, Shared.Monster, 3f, "Arrow_01");
+        //}
 
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            CreateArrow(5f, "Arrow_02");
-        }
+        //    if (Input.GetKeyDown(KeyCode.B))
+        //    {
+        //        CreateArrow(5f, "Arrow_02");
+        //    }
 
+        //}
     }
-
-    public void CreateBullet(Player _Player, Monster _Monster, float _Speed, string _Prefabs)
+        public void CreateBullet(Player _Player, Monster _Monster, float _Speed, string _Prefabs)
     {
 
             UnityEngine.Object arrowObj = Resources.Load("04_Prefab/Bullet/" + _Prefabs);
@@ -68,14 +70,12 @@ public class BulletMgr : MonoBehaviour
             DicBulletMgr.Add(Key, bullet);
 
             Key++;
-
-
         Debug.Log(Key);
 
         //레이어로 아군 적군 설정.
     }
 
-    void CreateArrow(float _Speed, string _Prefabs)
+    public void CreateArrow(Player _Player,int _Damage, float _Speed, string _Prefabs)
     {
         UnityEngine.Object arrowObj = Resources.Load("04_Prefab/Bullet/" + _Prefabs);
 
@@ -90,12 +90,12 @@ public class BulletMgr : MonoBehaviour
         aObj.transform.localScale = new Vector3(1, 1, 1);
 
 
-        aObj.transform.rotation = Shared.Player.transform.rotation;
-        aObj.transform.position = Shared.Player.transform.position;
+        aObj.transform.rotation = _Player.transform.rotation;
+        aObj.transform.position = _Player.transform.position;
 
         StraightArrow bullet = aObj.GetComponent<StraightArrow>();
 
-        bullet.Init(_Speed);
+        bullet.Init(_Speed, _Damage);
     }
 
 }
