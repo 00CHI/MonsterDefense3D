@@ -8,6 +8,7 @@ public class Monster : Character
 {  
     private void Awake()
     {
+        InitStat();
         Shared.Monster = this;
     }
 
@@ -37,5 +38,27 @@ public class Monster : Character
     //{
     //    Item = _Item;
     //}
+
+    public void OnHit(int _OtherAtk)
+    {
+        if(Stat[(int)eSTAT.eSTAT_HP] > 0)
+        {
+            int damage = _OtherAtk - Stat[(int)eSTAT.eSTAT_DEF];
+            Stat[(int)eSTAT.eSTAT_HP] -= damage;
+
+            Debug.Log(Stat[(int)eSTAT.eSTAT_HP] + "에" + damage + "의 데미지를 입혔습니다.");
+        }
+
+        if(Stat[(int)eSTAT.eSTAT_HP] == 0)
+        {
+            OnDeath();
+        }
+    }
+
+    void OnDeath()
+    {
+        
+    }
+
 
 }

@@ -25,6 +25,7 @@ public partial class Player : Character
     {
         Shared.Player = this;
 
+
         anim = GetComponent<Animator>();
     }
 
@@ -98,12 +99,14 @@ public partial class Player : Character
         Stat[(int)eSTAT.eSTAT_RES] = 5;
     }
 
-    public void Attack(Monster _Monster)
+    public void OnHit(int _OtherAtk)
     {
-        _Monster.InitStat();
+        if (Stat[(int)eSTAT.eSTAT_HP] > 0)
+        {
+            int damage = _OtherAtk - Stat[(int)eSTAT.eSTAT_DEF];
+            Stat[(int)eSTAT.eSTAT_HP] -= damage;
 
-        _Monster.Stat[(int)eSTAT.eSTAT_HP] -= Stat[(int)eSTAT.eSTAT_ATK];
-
-        Debug.Log(_Monster.Stat[(int)eSTAT.eSTAT_HP]+ "몬스터 HP에" + Stat[(int)eSTAT.eSTAT_ATK] + "만큼 입혔습니다.");
+            Debug.Log(Stat[(int)eSTAT.eSTAT_HP] + "에" + damage + "의 데미지를 입혔습니다.");
+        }
     }
 }

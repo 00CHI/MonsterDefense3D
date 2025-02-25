@@ -39,8 +39,7 @@ public class StraightArrow : MonoBehaviour
         }
         else if (monster)
         {
-            Shared.Player.Attack(Shared.Monster);
-            
+            Shared.Monster.OnHit(Shared.Player.Stat[(int)eSTAT.eSTAT_ATK]);
             //Debug.Log("Monster");
         }
     }
