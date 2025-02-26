@@ -34,7 +34,7 @@ public class Table_Base
         stream.Close();
     }
     
-    protected void Save_Binary(string _Name,Object _obj)
+    protected void Save_Binary(string _Name, object _obj)
     {
         string path = GetTablePath() + "/Table/Resourses/" + "Table_" + _Name + ".txt";
 
@@ -57,7 +57,6 @@ public class Table_Base
         stream.Close();
 
         return reader;
-
     }
 }
 

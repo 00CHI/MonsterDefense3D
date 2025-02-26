@@ -14,6 +14,16 @@ public class Stage : MonoBehaviour
     void Awake()
     {
         Shared.Stage = this;
+
+        Shared.InitTableMgr();
+    }
+
+    void Start()
+    {
+        Table_Character.Info info = Shared.TableMgr.Character.Get(1);
+
+
+        Debug.Log("HP: " + info.Hp + "Atk:" + info.Atk);
     }
 
 }

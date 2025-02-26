@@ -16,7 +16,7 @@ public abstract partial class Character : MonoBehaviour
     public eCHARACTER Type;
 
 
-    float moveSpeed = 3f;
+    protected float moveSpeed = 3f;
     public int HpMax;
     public int[] Stat = new int[(int)eSTAT.eSTAT_END];
 
@@ -25,7 +25,11 @@ public abstract partial class Character : MonoBehaviour
 
     public virtual void InitItem(ItemBase _Item) { }
 
-// Start is called before the first frame update
+
+    private void Awake()
+    {
+    }
+    // Start is called before the first frame update
     void Start()
     {
         if (AI != null)

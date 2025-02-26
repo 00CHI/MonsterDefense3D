@@ -5,11 +5,14 @@ using UnityEngine;
 using static UnityEditor.Progress;
 
 public class Monster : Character
-{  
+{
+
     private void Awake()
     {
         InitStat();
         Shared.Monster = this;
+
+        ANIMATOR = GetComponent<Animator>();
     }
 
     private void Update()
@@ -51,14 +54,35 @@ public class Monster : Character
 
         if(Stat[(int)eSTAT.eSTAT_HP] == 0)
         {
-            OnDeath();
+        
+            ANIMATOR.SetBool("isDie", true);
+            
+            moveSpeed = 0;
+            Invoke("OnDeath", 2f);
+         
         }
     }
 
     void OnDeath()
     {
-        
+        gameObject.SetActive(false);
+        Transform startPos = Shared.Stage.TRPATH[0];
+        Vector3 restartPos = new Vector3(startPos.position.x, startPos.position.y,startPos.position.z);
+
+        transform.position = restartPos;
+        Stat[(int)eSTAT.eSTAT_HP] = HpMax;
+
+        Debug.Log(Stat[(int)eSTAT.eSTAT_HP]);
+
+        if(Stat[(int)eSTAT.eSTAT_HP] == HpMax)//¼öÁ¤
+        {
+            gameObject.SetActive(true);
+            ANIMATOR.SetBool("isDie", false);
+
+            moveSpeed = 3f;
+        }
     }
+
 
 
 }

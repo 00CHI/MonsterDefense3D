@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
-public class Table_Mgr : MonoBehaviour
+public class Table_Mgr
 {
-    // Start is called before the first frame update
-    void Start()
+    public Table_Character Character = new Table_Character();
+
+    public void Init()
     {
-        
+#if UNITY_EDITOR
+        Character.init_CSV("Monster3D", 1, 0);
+#else
+        Character.init_Binary("Character");
+#endif
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Save()
     {
-        
+        Character.Save_Binary("Character");
+
+#if UNITY_EDITOR
+        AssetDatabase.Refresh();
+#endif
     }
 }

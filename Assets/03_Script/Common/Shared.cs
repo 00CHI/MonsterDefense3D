@@ -12,6 +12,19 @@ public static class Shared
     public static Monster Monster;
     public static BulletArrow BulletArrow;
 
+    public static Table_Mgr TableMgr;
+
+    public static Table_Mgr InitTableMgr()
+    {
+        if(TableMgr == null)
+        {
+            TableMgr = new Table_Mgr();
+            TableMgr.Init();
+        }
+
+        return TableMgr;
+    }
+
     //public static BattleMgr BattleMgr;
 
 }
