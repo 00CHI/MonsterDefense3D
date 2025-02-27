@@ -9,7 +9,7 @@ public class BulletMgr : MonoBehaviour
 
     //Queue<int> QueueBulletMgr = new Queue<int>();
 
-    List<GameObject> ListBulletMgr = new List<GameObject>();
+    List<int> ListBulletMgr = new List<int>();
 
 
     int Key;
@@ -70,32 +70,55 @@ public class BulletMgr : MonoBehaviour
             DicBulletMgr.Add(Key, bullet);
 
             Key++;
-        Debug.Log(Key);
+        
 
         //레이어로 아군 적군 설정.
     }
 
     public void CreateArrow(Player _Player,int _Damage, float _Speed, string _Prefabs)
     {
-        UnityEngine.Object arrowObj = Resources.Load("04_Prefab/Bullet/" + _Prefabs);
-
-        GameObject aObj = GameObject.Instantiate(arrowObj, Vector3.zero,
-        Quaternion.identity) as GameObject;
-
-        if (arrowObj == null)
+       if(Key <= 10)
         {
-            return;
+            UnityEngine.Object arrowObj = Resources.Load("04_Prefab/Bullet/" + _Prefabs);
+
+            GameObject aObj = GameObject.Instantiate(arrowObj, Vector3.zero,
+            Quaternion.identity) as GameObject;
+
+            if (arrowObj == null)
+            {
+                return;
+            }
+
+            aObj.transform.localScale = new Vector3(1, 1, 1);
+
+
+            aObj.transform.rotation = _Player.transform.rotation;
+            aObj.transform.position = _Player.transform.position;
+
+            StraightArrow bullet = aObj.GetComponent<StraightArrow>();
+
+            bullet.Init(_Speed, _Damage);
+
+            aObj.SetActive(false);
+
+            //
+            DicBulletMgr.Add(Key, bullet);
+
+            Debug.Log("Count: " + ListBulletMgr.Count);
+            StartCoroutine(Shared.Player.SetTrue(aObj));
+
+
+            if (Key == ListBulletMgr.Count)
+            {
+                DicBulletMgr.Remove(Key);
+                ListBulletMgr.Add(Key);
+
+                //DicBulletMgr.Remove(Key);
+
+                Debug.Log("Key: " + Key);
+
+            }
+
         }
-
-        aObj.transform.localScale = new Vector3(1, 1, 1);
-
-
-        aObj.transform.rotation = _Player.transform.rotation;
-        aObj.transform.position = _Player.transform.position;
-
-        StraightArrow bullet = aObj.GetComponent<StraightArrow>();
-
-        bullet.Init(_Speed, _Damage);
     }
-
 }

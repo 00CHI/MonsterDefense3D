@@ -36,7 +36,7 @@ public class Table_Base
     
     protected void Save_Binary(string _Name, object _obj)
     {
-        string path = GetTablePath() + "/Table/Resourses/" + "Table_" + _Name + ".txt";
+        string path = GetTablePath() + "/Table/Resources/" + "Table_" + _Name + ".txt";
 
         var b = new BinaryFormatter();
         Stream stream = File.Open(path, FileMode.OpenOrCreate, FileAccess.Write);

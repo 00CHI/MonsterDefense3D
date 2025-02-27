@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StraightArrow : MonoBehaviour
+public class StraightArrow : Bullet
 {
     float Speed;
     int Damage;

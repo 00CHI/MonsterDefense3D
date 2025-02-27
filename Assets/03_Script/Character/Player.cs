@@ -109,4 +109,12 @@ public partial class Player : Character
             Debug.Log(Stat[(int)eSTAT.eSTAT_HP] + "에" + damage + "의 데미지를 입혔습니다.");
         }
     }
+
+    public IEnumerator SetFalse(GameObject _GameObject)
+    {
+        yield return new WaitForSeconds(5f);
+
+        _GameObject.SetActive(false);
+
+    }
 }

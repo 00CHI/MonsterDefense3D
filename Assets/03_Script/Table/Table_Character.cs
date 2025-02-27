@@ -39,7 +39,7 @@ public class Table_Character : Table_Base
 
     public void InIt_Binary(string _Name)
     {
-        Load_Binary<Dictionary<int, Info>>(_Name, ref Dictionary);
+        Load_Binary<Dictionary<int, Info>>(_Name, ref Dictionary);//제너릭화 : 안에 있는 값이 다 다르지만 공통으로 사용되도록함.
 
     }
 

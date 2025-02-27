@@ -7,6 +7,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     //public BulletArrow BulletArrow;
+    //public StraightArrow StraightArrow;
 
     protected Vector3 TargetPos;
 

@@ -6,7 +6,6 @@ using static UnityEditor.Progress;
 
 public class Monster : Character
 {
-
     private void Awake()
     {
         InitStat();
@@ -73,8 +72,13 @@ public class Monster : Character
         Stat[(int)eSTAT.eSTAT_HP] = HpMax;
 
         Debug.Log(Stat[(int)eSTAT.eSTAT_HP]);
+        Invoke("Respawn", 2f);
 
-        if(Stat[(int)eSTAT.eSTAT_HP] == HpMax)//¼öÁ¤
+    }
+
+    void Respawn()
+    {
+        if (Stat[(int)eSTAT.eSTAT_HP] == HpMax)
         {
             gameObject.SetActive(true);
             ANIMATOR.SetBool("isDie", false);
