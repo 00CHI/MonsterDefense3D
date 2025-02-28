@@ -52,13 +52,11 @@ public class Monster : Character
         }
 
         if(Stat[(int)eSTAT.eSTAT_HP] == 0)
-        {
-        
+        {     
             ANIMATOR.SetBool("isDie", true);
             
             moveSpeed = 0;
-            Invoke("OnDeath", 2f);
-         
+            Invoke("OnDeath", 2f);        
         }
     }
 
@@ -73,7 +71,6 @@ public class Monster : Character
 
         Debug.Log(Stat[(int)eSTAT.eSTAT_HP]);
         Invoke("Respawn", 2f);
-
     }
 
     void Respawn()

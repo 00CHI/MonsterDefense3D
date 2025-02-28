@@ -18,6 +18,18 @@ public class AiMonster : AiBase
                 TargetIndex = 0;
             }
         }
+        
+        Collider[] playerColl = Physics.OverlapSphere(Character.transform.position, 10f);
+
+        if(playerColl.Length > 0)
+        {
+            Debug.Log(playerColl.Length);
+
+            //for (int i = 0; i < playerColl.Length;i++)
+            //{
+                
+            //}
+        }
 
         base.Search();
     }
@@ -30,6 +42,7 @@ public class AiMonster : AiBase
 
         base.Move();
     }
+
 }
 
        

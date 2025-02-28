@@ -50,7 +50,7 @@ public partial class Player : Character
         
         if (Input.GetKeyDown(KeyCode.B))
         {
-             Shared.BulletMgr.CreateArrow(this, Stat[(int)eSTAT.eSTAT_ATK], 5f, "Arrow_02");
+             Shared.BulletMgr.CreateArrow(this,Shared.Monster, Stat[(int)eSTAT.eSTAT_ATK], 5f, "Arrow_02");
         }
 
         
@@ -110,11 +110,5 @@ public partial class Player : Character
         }
     }
 
-    public IEnumerator SetFalse(GameObject _GameObject)
-    {
-        yield return new WaitForSeconds(5f);
 
-        _GameObject.SetActive(false);
-
-    }
 }

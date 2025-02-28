@@ -27,6 +27,7 @@ public class StraightArrow : Bullet
     public void Move()
     {
         transform.position += transform.forward * Speed * Time.deltaTime;
+        StartCoroutine(SetFalse(gameObject));
     }
 
     public void OnTriggerEnter(Collider other)
@@ -40,9 +41,19 @@ public class StraightArrow : Bullet
         else if (monster)
         {
             Shared.Monster.OnHit(Shared.Player.Stat[(int)eSTAT.eSTAT_ATK]);
+            Destroy(gameObject);
             //Debug.Log("Monster");
         }
     }
+
+    public IEnumerator SetFalse(GameObject _GameObject)
+    {
+        yield return new WaitForSeconds(5f);
+
+        Destroy(gameObject);
+
+    }
+
 
 
 }
