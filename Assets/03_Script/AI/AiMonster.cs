@@ -20,12 +20,9 @@ public class AiMonster : AiBase
                 TargetIndex = 0;
             }
         }
-
-
-
-
         base.Search();
     }
+
 
     protected override void Move()
     {
@@ -39,19 +36,30 @@ public class AiMonster : AiBase
         {
             //몬스터 <=> 플레이어 공격거리
             Character.Move(playerPos);
-            
+            Shared.Monster.ANIMATOR.SetBool("isAttack", false);
+
         }
         else if(playerDistance <= 1.5f)
         {
-
+            Attack();
         }
         else if(playerDistance > 5f)
         {
             Character.Move(targetPos);
+            Shared.Monster.ANIMATOR.SetBool("isAttack", false);
         }
+
 
         base.Move();
     }
+
+    protected override void Attack()
+    {
+        Shared.Monster.OnAttack();
+
+        base.Attack();
+    }
+
 
 }
 

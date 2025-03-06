@@ -3,8 +3,9 @@ public enum eAI
     eAI_NONE,
     eAI_CREATE,
     eAI_SEARCH,
+    eAI_ATTACK,
     eAI_MOVE,
-    eAI_RESET,
+    eAI_RESET
 }
 public enum eCHARACTER//¿­°ÅÇü
 {

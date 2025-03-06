@@ -49,16 +49,27 @@ public class Monster : Character
             Stat[(int)eSTAT.eSTAT_HP] -= damage;
 
             Debug.Log(Stat[(int)eSTAT.eSTAT_HP] + "에" + damage + "의 데미지를 입혔습니다.");
+
+            ANIMATOR.SetBool("isHIt", true);
+
         }
 
-        if(Stat[(int)eSTAT.eSTAT_HP] == 0)
-        {     
+        if (Stat[(int)eSTAT.eSTAT_HP] == 0)
+        {
+            ANIMATOR.SetBool("isHIt", false);
             ANIMATOR.SetBool("isDie", true);
             
             moveSpeed = 0;
             Invoke("OnDeath", 2f);        
         }
     }
+    public void OnAttack()
+    {
+        ANIMATOR.SetBool("isAttack", true);
+
+        AnimAttack();
+    }
+
 
     void OnDeath()
     {
@@ -84,6 +95,9 @@ public class Monster : Character
         }
     }
 
-
+    void AnimAttack()
+    {
+        Shared.Player.OnHit(Stat[(int)eSTAT.eSTAT_ATK]);
+    }
 
 }

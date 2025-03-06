@@ -97,14 +97,25 @@ public partial class Player : Character
         Stat[(int)eSTAT.eSTAT_DEF] = 20;
         Stat[(int)eSTAT.eSTAT_SPEED] = 4;
         Stat[(int)eSTAT.eSTAT_RES] = 5;
+
+        HpMax = Stat[(int)eSTAT.eSTAT_HP];
     }
 
     public void OnHit(int _OtherAtk)
     {
         if (Stat[(int)eSTAT.eSTAT_HP] > 0)
-        {
+        {     //10 - 20
             int damage = _OtherAtk - Stat[(int)eSTAT.eSTAT_DEF];
-            Stat[(int)eSTAT.eSTAT_HP] -= damage;
+
+            if (damage <= 0)
+            {
+                Stat[(int)eSTAT.eSTAT_DEF] = 0;
+            }
+            else if(damage >= 0)
+            {
+                Stat[(int)eSTAT.eSTAT_HP] -= damage;
+            }
+
 
             Debug.Log(Stat[(int)eSTAT.eSTAT_HP] + "에" + damage + "의 데미지를 입혔습니다.");
         }

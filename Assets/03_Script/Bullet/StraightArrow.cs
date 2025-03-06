@@ -51,7 +51,6 @@ public class StraightArrow : Bullet
         yield return new WaitForSeconds(5f);
 
         Destroy(gameObject);
-
     }
 
 

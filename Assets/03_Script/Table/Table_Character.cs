@@ -63,7 +63,7 @@ public class Table_Character : Table_Base
         }
     }
 
-  
+
     protected bool Read(CSVReader _Reader, Info _Info, int _Row, int _StartCol)
     {
         if (_Reader.reset_row(_Row, _StartCol) == false)
@@ -83,7 +83,7 @@ public class Table_Character : Table_Base
 
         return true;
     }
-    
+
 
 }
 

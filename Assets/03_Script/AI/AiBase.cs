@@ -36,6 +36,9 @@ public class AiBase : MonoBehaviour
             case eAI.eAI_MOVE:
                 Move();
                 break;
+            case eAI.eAI_ATTACK:
+                Attack();
+                break;
             case eAI.eAI_RESET:
                 ReSet();
                 break;
@@ -54,7 +57,10 @@ public class AiBase : MonoBehaviour
     protected virtual void Move()
     {
         AIState = eAI.eAI_SEARCH;
-
+    }
+    protected virtual void Attack()
+    {
+        AIState = eAI.eAI_ATTACK;
     }
     protected virtual void ReSet()
     {
