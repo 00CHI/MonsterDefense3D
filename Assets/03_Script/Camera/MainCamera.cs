@@ -19,13 +19,11 @@ public class MainCamera : MonoBehaviour
     private void Awake()
     {
         offsetX = 0f;
-        offsetY = 8f;
-        offsetZ = -13f;
+        offsetY = 15f;
+        offsetZ = -25f;
 
         StartCoroutine(FindPlayer());
-
-
-           
+       
         //offset = transform.position - target.transform.position;
     }
 

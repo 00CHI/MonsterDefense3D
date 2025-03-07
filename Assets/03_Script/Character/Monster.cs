@@ -48,15 +48,11 @@ public class Monster : Character
             int damage = _OtherAtk - Stat[(int)eSTAT.eSTAT_DEF];
             Stat[(int)eSTAT.eSTAT_HP] -= damage;
 
-            Debug.Log(Stat[(int)eSTAT.eSTAT_HP] + "에" + damage + "의 데미지를 입혔습니다.");
-
-            ANIMATOR.SetBool("isHIt", true);
-
+            Debug.Log(Stat[(int)eSTAT.eSTAT_HP] + "에" + damage + "의 데미지를 입혔습니다.");           
         }
 
         if (Stat[(int)eSTAT.eSTAT_HP] == 0)
         {
-            ANIMATOR.SetBool("isHIt", false);
             ANIMATOR.SetBool("isDie", true);
             
             moveSpeed = 0;

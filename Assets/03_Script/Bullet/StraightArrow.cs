@@ -41,6 +41,8 @@ public class StraightArrow : Bullet
         else if (monster)
         {
             Shared.Monster.OnHit(Shared.Player.Stat[(int)eSTAT.eSTAT_ATK]);
+            Shared.Monster.ANIMATOR.SetTrigger("isHit");
+            Shared.Monster.ANIMATOR.SetBool("isWalk", true);
             Destroy(gameObject);
             //Debug.Log("Monster");
         }

@@ -108,9 +108,10 @@ GameObject:
   - component: {fileID: 6708182259430495362}
   - component: {fileID: 3184576365570014358}
   - component: {fileID: 8012223607629134402}
+  - component: {fileID: -7134292021823221066}
   m_Layer: 0
   m_Name: Monster
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,11 +179,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc2e74698029654396e5ba0f70ca7ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AI: {fileID: 0}
-  ANIMATOR: {fileID: 0}
-  Type: 0
+  AI: {fileID: 3184576365570014358}
+  ANIMATOR: {fileID: 6708182259430495362}
+  Type: 4
   HpMax: 0
   Stat: 000000000000000000000000000000000000000000000000
+--- !u!136 &-7134292021823221066
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6651181848436717726}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.55
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &6651286340814260894
 GameObject:
   m_ObjectHideFlags: 0
