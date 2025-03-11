@@ -41,6 +41,8 @@ public class AiMonster : AiBase
         }
         else if(playerDistance <= 1.5f)
         {
+           Shared.Monster.AnimAttack();
+
             Attack();
         }
         else if(playerDistance > 5f)

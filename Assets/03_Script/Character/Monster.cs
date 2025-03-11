@@ -63,7 +63,6 @@ public class Monster : Character
     {
         ANIMATOR.SetBool("isAttack", true);
 
-        AnimAttack();
     }
 
 
@@ -91,7 +90,7 @@ public class Monster : Character
         }
     }
 
-    void AnimAttack()
+    public void AnimAttack()
     {
         Shared.Player.OnHit(Stat[(int)eSTAT.eSTAT_ATK]);
     }
